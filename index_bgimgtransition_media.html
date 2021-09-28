@@ -7,6 +7,9 @@
   <title>Document</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="media.css">
 </head>
 <body>
@@ -55,18 +58,20 @@
     });
 
     const navContainer = document.querySelector('.btns .container');
-    const navToggle = document.querySelector('.btns__toggle-btn');
     document.addEventListener('scroll', function () {
       console.log(window.scrollY);
       if (window.scrollY > 60) {
         navContainer.classList.add('bgshow');
-        navToggle.classList.add('bgshow');
         console.log('show');
       } else {
         navContainer.classList.remove('bgshow');
-        navToggle.classList.remove('bgshow');
       }
     });
+    const btnsMenu = document.querySelector('.btns__menu');
+    const btnsToggleBtn = document.querySelector('.btns__toggle-btn');
+    btnsToggleBtn.addEventListener('click', function() {
+      btnsMenu.classList.toggle('open');
+    })
 
 
 

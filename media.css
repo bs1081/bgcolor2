@@ -1,20 +1,22 @@
-button {
-  background-color: transparent;
-  cursor: pointer;
-  border: none;
-  outline: none;
-}
 body{
-  margin:0;
+  margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;
   background-color: lightyellow;
   transition: all 1s;
   height: 2000px;
 }
+
 .bgcolor--blue{
   background-color: lightblue;
 }
 .bgcolor--gray {
   background-color: lightgray;
+}
+button {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
 }
 .btns {
   position: fixed;
@@ -29,13 +31,15 @@ body{
   background-color: transparent;
   transition: 0.3s;
   margin: auto;
-  text-align: center;
+  display: flex;
+  justify-content: center;
   border-radius: 0 0 10px 10px;
 }
 .btns .container.bgshow {
   padding: 20px;
   background-color: #9AD9C7;
 }
+
 .bg__img {
   margin: 0;
   position: absolute;
@@ -47,11 +51,13 @@ body{
 }
 .bg__img--show {
   opacity: 1;
-  
 }
+.btns__menu {
+  display: flex;
+}
+
 .btns__menu button {
   font-size: 16px;
-  font-weight: 600;
   color: #194035;
   border: 2px solid #4D8C7A;
   width: 200px;
@@ -68,26 +74,37 @@ body{
 }
 .btns__toggle-btn {
   position: absolute;
-  top: 40px;
+  top: 10px;
   right: 32px;
   font-size: 24px;
+  font-weight: 300px;
   color: #194035;
   transition: 0.3s;
   display: none;
 }
-.btns__toggle-btn.bgshow {
-  top: 32px;
-}
+
 
 @media screen and (max-width: 900px) {
   .btns__toggle-btn {
     display: block;
   }
+  .btns__menu button {
+    display: block;
+    margin: 10px auto;
+    width: 80%;
+  }
   .btns__menu {
-    display: flex;
     flex-direction: column;
     width: 100%;
     align-items: center;
-    padding-top: 40px;
+    justify-content: center;
+    padding-top: 20px;
+    display: none;
+  }
+  .btns__menu.open {
+    display: block;
+  }
+  .btns .container {
+    background-color: #9AD9C7;
   }
 }
