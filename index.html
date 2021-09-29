@@ -42,6 +42,15 @@
     .bg__img--show {
       opacity: 1;
     }
+    .btns {
+      position: fixed;
+      padding: 10px;
+      background-color: transparent;
+      transition: 0.3s;
+    }
+    .btns.bgshow {
+      background-color: tomato;
+    }
   </style>
 </head>
 <body>
@@ -81,6 +90,18 @@
       // document.body.classList.add('bg--img');
       bgContainer.classList.add('bg__img--show');
     });
+
+    const navContainer = document.querySelector('.btns')
+    document.addEventListener('scroll', function () {
+      // console.log(window.scrollY);
+      if (window.scrollY > 100) {
+        navContainer.classList.add('bgshow');
+      } else {
+        navContainer.classList.remove('bgshow');
+      }
+
+    });
+
 
 
 
