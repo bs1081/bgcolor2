@@ -28,8 +28,48 @@
         </span>
       </button>
     </div>
-    
   </div>
+  <section id="home">
+    <div class="wrapper">
+      <h1>Home</h1>
+      <h2>Lorem ipsum dolor sit amet.</h2>
+      <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, quisquam. Eius necessitatibus sit impedit eum culpa sed, corporis voluptate commodi officia similique. Possimus ullam nesciunt impedit sequi, ab corrupti molestiae.</h3>
+    </div>
+  </section>
+  <section id="About">
+    <div class="wrapper">
+      <h1>About</h1>
+      <h2>Lorem ipsum dolor sit amet.</h2>
+      <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, quisquam. Eius necessitatibus sit impedit eum culpa sed, corporis voluptate commodi officia similique. Possimus ullam nesciunt impedit sequi, ab corrupti molestiae.</h3>
+    </div>
+  </section>
+  <section id="Skills">
+    <div class="wrapper">
+      <h1>Skills</h1>
+      <h2>Lorem ipsum dolor sit amet.</h2>
+      <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, quisquam. Eius necessitatibus sit impedit eum culpa sed, corporis voluptate commodi officia similique. Possimus ullam nesciunt impedit sequi, ab corrupti molestiae.</h3>
+    </div>
+  </section>
+  <section id="home">
+    <div class="wrapper">
+      <h1>Works</h1>
+      <h2>Lorem ipsum dolor sit amet.</h2>
+      <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, quisquam. Eius necessitatibus sit impedit eum culpa sed, corporis voluptate commodi officia similique. Possimus ullam nesciunt impedit sequi, ab corrupti molestiae.</h3>
+    </div>
+  </section>
+  <section id="Contact">
+    <div class="wrapper">
+      <h1>Contact Me</h1>
+      <h2>Lorem ipsum dolor sit amet.</h2>
+      <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, quisquam. Eius necessitatibus sit impedit eum culpa sed, corporis voluptate commodi officia similique. Possimus ullam nesciunt impedit sequi, ab corrupti molestiae.</h3>
+    </div>
+  </section>
+
+  <button class="arrow-up">
+    <span class="material-icons">
+      arrow_upward
+    </span>
+  </button>
   <script>
     const bgContainer = document.querySelector('.bg__img');
     const btnToggle = document.querySelector('.btn_toggle');
@@ -71,7 +111,21 @@
     const btnsToggleBtn = document.querySelector('.btns__toggle-btn');
     btnsToggleBtn.addEventListener('click', function() {
       btnsMenu.classList.toggle('open');
+    });
+
+    const arrowUp = document.querySelector('.arrow-up');
+    document.addEventListener('scroll', function() {
+      if ( window.scrollY > 500) {
+        arrowUp.classList.add('visible');
+      } else {
+        arrowUp.classList.remove('visible');
+      }
     })
+
+    const home = document.querySelector('#home');
+    arrowUp.addEventListener('click', function () {
+      home.scrollIntoView({behavior:"smooth"});
+    });
 
 
 
