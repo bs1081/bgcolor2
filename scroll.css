@@ -140,6 +140,7 @@ h3 {
   .btns .container {
     background-color: #9accd9;
     border-radius: 0;
+    padding: 24px;
 
   }
   .btns__toggle-btn {

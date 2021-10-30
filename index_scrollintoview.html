@@ -17,11 +17,11 @@
   <div class="btns">
     <div class="container">
       <div class="btns__menu">
-        <button class="btn home">Home</button>
-        <button class="btn about">About</button>
-        <button class="btn skills">Skills</button>
-        <button class="btn works">Works</button>
-        <button class="btn contact">Contact Me</button>
+        <button class="btn home" data-link="#home">Home</button>
+        <button class="btn about" data-link="#about">About</button>
+        <button class="btn skills" data-link="#skills">Skills</button>
+        <button class="btn works" data-link="#works">Works</button>
+        <button class="btn contact" data-link="#contact">Contact Me</button>
       </div>
       <button class="btns__toggle-btn">
         <span class="material-icons">
@@ -73,56 +73,70 @@
   </button>
   <script>
 
-    const home = document.querySelector('#home');
-    const about = document.querySelector('#about');
-    const skills = document.querySelector('#skills');
-    const works = document.querySelector('#works');
-    const contact = document.querySelector('#contact');
-
-    const bgContainer = document.querySelector('.bg__img');
-    const btnToggle = document.querySelector('.btn.home');
-    // addEventListener('이벤트', 실행함수);
-    btnToggle.addEventListener('click', function () {
-      home.scrollIntoView({behavior:"smooth", block:"start"});
-      btnsMenu.classList.remove('open');
-    });
-
-    const btnReset = document.querySelector('.btn.about');
-    btnReset.addEventListener('click', function () {
-      about.scrollIntoView({behavior:"smooth", block:"start"});
-      btnsMenu.classList.remove('open');
-    });
-
-    const btnBgGray = document.querySelector('.btn.skills');
-    btnBgGray.addEventListener('click', function () {
-      skills.scrollIntoView({behavior:"smooth", block:"start"});
-      btnsMenu.classList.remove('open');
-    });
-
-    const btnBgImg = document.querySelector('.btn.works');
-    btnBgImg.addEventListener('click', function () {
-      works.scrollIntoView({behavior:"smooth", block:"start"});
-      btnsMenu.classList.remove('open');
-    });
-
-    const btnContact = document.querySelector('.btn.contact');
-    btnContact.addEventListener('click', function () {
-      contact.scrollIntoView({behavior:"smooth", block:"start"});
-      btnsMenu.classList.remove('open');
-    });
-
-    const navContainer = document.querySelector('.btns .container');
-    document.addEventListener('scroll', function () {
-      console.log(window.scrollY);
-      if (window.scrollY > 60) {
-        navContainer.classList.add('bgshow');
-        console.log('show');
-      } else {
-        navContainer.classList.remove('bgshow');
-      }
-    });
+    // const home = document.querySelector('#home');
+    // const about = document.querySelector('#about');
+    // const skills = document.querySelector('#skills');
+    // const works = document.querySelector('#works');
+    // const contact = document.querySelector('#contact');
 
     const btnsMenu = document.querySelector('.btns__menu');
+    btnsMenu.addEventListener('click', (event) => {
+      console.log(event.target.dataset.link);
+      const target = event.target;
+      const link = target.dataset.link;
+      if (link == null) {
+        return;
+      }
+      const scrollTo = document.querySelector(link);
+      scrollTo.scrollIntoView({behavior:"smooth", block:"start"});
+      btnsMenu.classList.remove('open');
+      
+    });
+
+    // const bgContainer = document.querySelector('.bg__img');
+    // const btnToggle = document.querySelector('.btn.home');
+    // // addEventListener('이벤트', 실행함수);
+    // btnToggle.addEventListener('click', function () {
+    //   home.scrollIntoView({behavior:"smooth", block:"start"});
+    //   btnsMenu.classList.remove('open');
+    // });
+
+    // const btnReset = document.querySelector('.btn.about');
+    // btnReset.addEventListener('click', function () {
+    //   about.scrollIntoView({behavior:"smooth", block:"start"});
+    //   btnsMenu.classList.remove('open');
+    // });
+
+    // const btnBgGray = document.querySelector('.btn.skills');
+    // btnBgGray.addEventListener('click', function () {
+    //   skills.scrollIntoView({behavior:"smooth", block:"start"});
+    //   btnsMenu.classList.remove('open');
+    // });
+
+    // const btnBgImg = document.querySelector('.btn.works');
+    // btnBgImg.addEventListener('click', function () {
+    //   works.scrollIntoView({behavior:"smooth", block:"start"});
+    //   btnsMenu.classList.remove('open');
+    // });
+
+    // const btnContact = document.querySelector('.btn.contact');
+    // btnContact.addEventListener('click', function () {
+    //   contact.scrollIntoView({behavior:"smooth", block:"start"});
+    //   btnsMenu.classList.remove('open');
+    // });
+
+    // const navContainer = document.querySelector('.btns .container');
+    // document.addEventListener('scroll', function () {
+    //   console.log(window.scrollY);
+    //   if (window.scrollY > 60) {
+    //     navContainer.classList.add('bgshow');
+    //     console.log('show');
+    //   } else {
+    //     navContainer.classList.remove('bgshow');
+    //   }
+    // });
+
+    // const btnsMenu = document.querySelector('.btns__menu');
     const btnsToggleBtn = document.querySelector('.btns__toggle-btn');
     btnsToggleBtn.addEventListener('click', function() {
       btnsMenu.classList.toggle('open');
