@@ -10,13 +10,18 @@ body{
   background-color: lightyellow;
   transition: all 1s;
   height: 2000px;
+  scroll-snap-type: y proximity;
 }
 section {
   width: 100%;
+  height: 100vh;
+  scroll-snap-align: start;
+  text-align: center;
 }
 .wrapper {
   max-width: 1200px;
   margin: auto;
+  
 }
 .bgcolor--blue{
   background-color: lightblue;
@@ -122,9 +127,6 @@ button {
 
 #home {
   padding-top: 88px;
-  text-align: center;
-}
-section {
   text-align: center;
 }
 
